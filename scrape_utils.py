@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+# TODO: I used Apify.com because I was rate limited by Erowid.org - accidentally scrapped 5000+ pages in one sitting and IP address was banned lol. going to revisit this code later to continue so I don't need to use apify | 12/4/23
 # Base URL of the site we will scrape from
 BASE_URL = "https://erowid.org/experiences/"
 
@@ -33,7 +34,7 @@ def scrape_substance_reports(substance_url):
     # Make the request and create a BeautifulSoup object
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
-
+    all_reports_link_table = soup.find("table", id="exp-front-top-table")
     # Extract the trip reports - this would need to be customized according to the page structure
     reports = []
     # Example: Find all 'a' elements with a specific CSS class (this would depend on the actual structure of the page)

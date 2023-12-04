@@ -1,5 +1,10 @@
 .env
 __pycache__/
-.*json
+*.json
 .ipynb_checkpoints/
 .venv/
+presentation_resources/
+processed_data/
+raw_experiences/
+visualizations/
+erowid-exps/
